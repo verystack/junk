@@ -8,32 +8,10 @@
 
 namespace SoLoud
 {
-
-    //Maximum number of supported recording devices
-    const int MAX_RECORDING_DEVICES = 10;
-
-    //Maximum recording time
-    const int MAX_RECORDING_SECONDS = 5;
-
-    //Maximum recording time plus padding
-    const int RECORDING_BUFFER_SECONDS = MAX_RECORDING_SECONDS + 1;
-
-    //The various recording actions we can take
-    enum RecordingState
-    {
-        SELECTING_DEVICE,
-        STOPPED,
-        RECORDING,
-        RECORDED,
-        PLAYBACK,
-        ERROR
-    };
-
     static SDL_AudioSpec gActiveAudioSpec;
     static SDL_AudioDeviceID gAudioDeviceID;
     bool isRecording = false;
     Uint32 gBufferByteSize = 0;
-    drwav converter;
 
     Uint8* audioHoldingPattern = NULL;
 
